@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const URL = 'https://pixabay.com/api/';
-const API_KEY = '34861476-c7f796ddaeb464582845dfff4';
+const API_KEY = '32900426-a12efdc1668c6b000f20a1416';
 export const PER_PAGE = 12;
 
 export const fetchPhotosWithQuery = async (query, page) => {
