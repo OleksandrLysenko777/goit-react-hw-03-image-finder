@@ -28,7 +28,7 @@ export class App extends Component {
   async componentDidMount() {
     this.setState({ isLoading: true });
 
-    // get initial photos onload
+    
     const response = await fetchPhotosWithQuery(this.state.query);
     
     this.setState({ photos: response.hits });

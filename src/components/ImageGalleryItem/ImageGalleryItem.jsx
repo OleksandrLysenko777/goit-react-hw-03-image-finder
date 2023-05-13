@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 class ImageGalleryItem extends Component {
   render() {
     const { id, webformatURL, largeImageURL, tags, showModal } = this.props;
-
     return (
       <li key={id} className={css.gallery__item}>
         <img
@@ -15,7 +14,7 @@ class ImageGalleryItem extends Component {
           loading="lazy"
           src={webformatURL}
           alt={tags}
-          onClick={() => showModal(largeImageURL)}
+          onClick={() => showModal(largeImageURL)}        
         />
       </li>
     );

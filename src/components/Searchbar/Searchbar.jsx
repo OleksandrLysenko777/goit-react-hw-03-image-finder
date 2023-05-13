@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import css from './Searchbar.module.css';
 import PropTypes from 'prop-types';
-
+import Notiflix from 'notiflix';
 const INITIAL_VALUE = {
   inputQuery: '',
 }
@@ -14,6 +14,7 @@ class Searchbar extends Component {
   handleChange = event => {
     const inputQuery = event.currentTarget.value;
     this.setState({ inputQuery });
+    
   };
 
   
@@ -21,8 +22,19 @@ class Searchbar extends Component {
     event.preventDefault();
     const { inputQuery } = this.state;
     
-    this.props.getPhotos(inputQuery)
-    
+    this.props.getPhotos(inputQuery);
+    if (this.state.inputQuery.trim() === '') {
+      return Notiflix.Notify.info(
+        'Please enter key words for search.'
+      );
+    }
+ 
+  if (inputQuery !== 0) {
+    Notiflix.Notify.success(`Hooray! We found images`);
+  }
+  
+
+    this.setState({ inputQuery: '' });
   };
 
   render() {
