@@ -10,7 +10,7 @@ import Loader from './Loader/Loader';
 const DELAY_TIME = 700;
 
 const INITIAL_STATE = {
-  query: 'sweet cats',
+  query: '',
   page: 1,
   totalHits: 0,
   allPages: 1,
