@@ -7,7 +7,7 @@ import Modal from './Modal/Modal';
 import Button from './Button/Button';
 import Loader from './Loader/Loader';
 
-const DELAY_TIME = 700;
+
 
 const INITIAL_STATE = {
   query: '',
@@ -25,18 +25,7 @@ export class App extends Component {
     ...INITIAL_STATE,
   };
 
-  async componentDidMount() {
-    this.setState({ isLoading: true });
-
-    
-    const response = await fetchPhotosWithQuery(this.state.query);
-    
-    this.setState({ photos: response.hits });
-
-    setTimeout(async () => {
-      this.setState({ isLoading: false });
-    }, DELAY_TIME);
-  }
+  
 
   getPhotos = async (query, page) => {
     this.setState({ isLoading: true });

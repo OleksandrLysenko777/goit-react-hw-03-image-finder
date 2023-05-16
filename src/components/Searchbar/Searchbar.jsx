@@ -21,15 +21,15 @@ class Searchbar extends Component {
   handleSubmit = event => {
     event.preventDefault();
     const { inputQuery } = this.state;
-    
-    this.props.getPhotos(inputQuery);
+       
     if (this.state.inputQuery.trim() === '') {
       return Notiflix.Notify.info(
         'Please enter key words for search.'
       );
     }
  
-  if (inputQuery !== 0) {
+    if (inputQuery !== 0) {
+    this.props.getPhotos(inputQuery);
     Notiflix.Notify.success(`Hooray! We found images`);
   }
   
